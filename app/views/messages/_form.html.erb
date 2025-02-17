@@ -1,0 +1,4 @@
+<%= form_with model: [conversation, message] do |f| %>
+  <%= f.text_area :body, placeholder: "Type your message..." %>
+  <%= f.submit "Send" %>
+<% end %>

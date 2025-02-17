@@ -1,0 +1,427 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+
+
+/* Ensure the page fills the viewport and centers the content */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1f1b41;
+    /* light background for the page */
+    font-family: Arial, sans-serif;
+    color: #fff;
+    /* white text everywhere on default*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Container to help center the login box */
+.login-container {
+    margin-top: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* The login box styling */
+.login-box {
+    background-color: #51657a;
+    /* grayish blue background */
+    color: #e99f9f;
+    /* light text */
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+/* Logo styling inside the login box */
+.login-box .logo img {
+    width: 80px;
+    /* adjust as needed */
+    margin-bottom: 0rem;
+}
+
+.login-box .logo h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* Styling for the buttons container */
+.login-buttons {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Styling for each login button */
+.login-button {
+    display: block;
+    background-color: #369cc4;
+    /* blue background */
+    color: #fff;
+    padding: 0.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #2d4373;
+    /* darker blue on hover */
+}
+
+/* Headings for forms */
+.login-box h2 {
+    margin: 1.5rem 0 1rem;
+    font-size: 1.5rem;
+}
+
+
+/* Styling the form fields */
+.field {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.field input[type="email"],
+.field input[type="password"],
+.field input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Styling the actions area */
+.actions {
+    margin-top: 20px;
+}
+
+.actions input[type="submit"],
+.actions button {
+    background-color: #3b5998;
+    /* blue background */
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.actions input[type="submit"]:hover,
+.actions button:hover {
+    background-color: #2d4373;
+}
+
+/* Optional: Adjust shared links if needed */
+.devise-links {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.devise-links a {
+    color: #e99f9f;
+    text-decoration: underline;
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: #2d2a4a;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    /* fixed to the top */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 7%;
+}
+
+.top-bar .app-name h1 {
+    margin: 0;
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+
+.top-bar .settings {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-right: 3rem;
+    /* adjust as needed */
+}
+
+.top-bar .settings img {
+    width: 7%;
+    height: 7%;
+    /* adjust as needed */
+    cursor: pointer;
+    margin-right: 0.7rem;
+}
+
+
+
+/* Main Container */
+.main-container {
+    width: 100%;
+    /*max-width: 1200px;*/
+    margin: 80px auto 0 auto;
+    /* margin-top to account for fixed header */
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+/* Left Side: Friendships Area */
+.friendships-area {
+    flex: 0 0 20%;
+    /* 20% of the width */
+    background-color: #3b3a5e;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    height: calc(100vh - 120px);
+}
+
+/* Friendships area headings and list */
+
+.friendships-area h2,
+.friendships-area h3 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.friendships-area ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.friendship-item {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: #4d4a70;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.friend-box {
+    background-color: #4d4a70;
+    /* a subtle dark background */
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.friend-box a {
+    color: #fff;
+    /* white text */
+    text-decoration: none;
+    display: block;
+}
+
+/* Optional: Hover effect */
+.friend-box:hover {
+    background-color: #369cc4;
+    /* change to a brighter blue on hover */
+    transform: scale(1.02);
+}
+
+/* Send friend request form */
+.send-friend-request {
+    margin-top: 2rem;
+}
+
+/* Friend request buttons */
+.friendship-button {
+    background-color: #369cc4;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.friendship-button:hover {
+    background-color: #2d4373;
+}
+
+/* Right Side: Chat Area */
+.chat-area {
+    flex: 1;
+    /* takes the remaining width */
+    height: calc(100vh - 120px);
+    background-color: #23202e;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+}
+
+.chat-area h2 {
+    margin-top: 0;
+}
+
+/* Chat Messages */
+.chat-messages {
+    flex: 1;
+    /* take available space */
+    overflow-y: auto;
+    padding: 0.5rem;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #2b2838;
+    margin-bottom: 1rem;
+}
+
+turbo-stream-from {
+    padding: 0.5rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* Customise scroll bar */
+    scrollbar-width: thin;
+    scrollbar-color: #369cc4 #2b2838;
+}
+
+
+
+/* Individual Message */
+.message {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    background-color: #403a50;
+}
+
+.message.sent {
+    background-color: #4c4158;
+    text-align: right;
+}
+
+/* Message Form */
+.message-form {
+    margin-top: auto;
+}
+
+.message-form textarea {
+    width: 100%;
+    height: 60px;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #444;
+    resize: none;
+}
+
+.message-form input[type="submit"] {
+    background-color: #369cc4;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* Send button */
+.message-form input[type="submit"]:hover {
+    background-color: #2d4373;
+}
+
+
+#message_body {
+    height: 60px;
+    resize: none;
+    background-color: #2b2838;
+    /*width: 52.6rem;*/
+    width: calc(162.7vh - 120px);
+    color: whitesmoke;
+    font-size: 120%;
+}
+
+/* Logout Button */
+.logout-button {
+    margin-top: 1rem;
+    background-color: #e63946;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #d62828;
+}
+
+/* Style for form fields in friend request section */
+.form-field {
+    margin-bottom: 15px;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+    /* White label text */
+}
+
+.form-field input[type="text"],
+.form-field input[type="email"],
+.form-field input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #2b2838;
+    /* Dark background to match chat area */
+    color: #fff;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-field input[type="text"]:focus,
+.form-field input[type="email"]:focus,
+.form-field input[type="password"]:focus {
+    border-color: #369cc4;
+    outline: none;
+}

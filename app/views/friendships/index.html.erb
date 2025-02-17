@@ -1,0 +1,60 @@
+<p>Find me in app/views/friendships/index.html.erb</p>
+
+<h1>Your Friendships</h1>
+
+<!-- Pending Friend Requests Section -->
+<section>
+  <% if @friend_requests.present? %>
+  <h2>Pending Friend Requests</h2>
+    <ul>
+      <% @friend_requests.each do |friendship| %>
+        <li>
+          <!-- Assuming friendship.user is the one who initiated the request -->
+          <strong><%= friendship.user.email %></strong> has sent you a friend request.
+          <br>
+          <!-- Buttons to accept or reject the request -->
+            <%= button_to 'Accept', friendship_path(friendship), 
+                method: :patch, params: { friendship: { friendship_status: 'accepted' } },
+                data: { confirm: 'Accept this friend request?' } %>
+            <%= button_to 'Reject', friendship_path(friendship), 
+                method: :patch, params: { friendship: { friendship_status: 'rejected' } },
+                data: { confirm: 'Reject this friend request?' } %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <!-- <p>No pending friend requests.</p> -->
+  <% end %>
+</section>
+
+<!-- Friends List Section -->
+<section>
+  <h2>Your Friends</h2>
+  <% if @friends.present? %>
+    <ul>
+      <% @friends.each do |friend| %>
+        <li>
+          <%= friend.email %>
+          <!-- If you want to add a remove friend option, you need a way to identify the friendship record.
+               This might involve a helper method that looks up the correct Friendship record between
+               current_user and friend. For now, we'll simply display the friend. -->
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>You have no friends yet.</p>
+  <% end %>
+
+  <h2>Send a Friend Request</h2>
+<%= form_with url: friendships_path, method: :post, local: true do |form| %>
+  <div>
+    <%= form.label :friend_email, "Friend's Email:" %>
+    <%= form.text_field :friend_email, placeholder: "Enter email" %>
+  </div>
+  <%= form.submit "Send Friend Request" %>
+<% end %>
+
+</section>
+
+
+

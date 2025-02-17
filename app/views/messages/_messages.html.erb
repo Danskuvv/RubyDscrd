@@ -1,0 +1,8 @@
+<div id="chat-messages">
+  <% conversation.messages.order(:created_at).each do |message| %>
+    <div class="message <%= 'sent' if message.sender == current_user %>">
+      <strong><%= message.sender.email %>:</strong> <%= message.body %>
+      <small><%= message.created_at.strftime("%H:%M") %></small>
+    </div>
+  <% end %>
+</div>

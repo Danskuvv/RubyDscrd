@@ -1,24 +1,57 @@
-# README
+# Ruby Discord
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby Discord is a Ruby on Rails web application inspired by Discord. It features user authentication, friend management, and a chat interface. **This is a practice project** and not a real world application.
 
-Things you may want to cover:
+## Table of Contents
 
-* Ruby version
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Database Setup](#database-setup)
+- [Running the Test Suite](#running-the-test-suite)
+- [Running the Application](#running-the-application)
+- [Deployment](#deployment)
+- [Additional Information](#additional-information)
 
-* System dependencies
+## Prerequisites
 
-* Configuration
+- **Ruby** (built with 3.4.1)  
+- **Rails** (built with 8.0.1)  
+- A Unix-like environment is recommended (using WSL on Windows is supported)
+- [Node.js](https://nodejs.org/) (if using Webpacker or Yarn for JavaScript packages)
+- Git
 
-* Database creation
+## Installation
 
-* Database initialization
+1. **Clone the repository:**
 
-* How to run the test suite
+   bash:
+   - git clone https://github.com/Danskuvv/RubyDscrd
+   - cd ruby-discord
 
-* Services (job queues, cache servers, search engines, etc.)
+2. **Install dependencies:**
 
-* Deployment instructions
+Make sure you have Ruby and Rails installed. Then install the required gems:
 
-* ...
+    - bundle install
+    
+
+3. **Database Setup**
+
+Create the Database:
+
+    rails db:create
+
+
+Run Migrations:
+
+    rails db:migrate
+
+
+4. **Running the Application**
+
+Start the Rails server with:
+    - rails server
+    - (or: rails s)
+
+Then, navigate to http://localhost:3000 in your browser.

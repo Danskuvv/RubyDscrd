@@ -1,6 +1,9 @@
 # Ruby Discord
 
-Ruby Discord is a Ruby on Rails web application inspired by Discord. It features user authentication, friend management, and a chat interface. **This is a practice project** and not a real world application.
+Ruby Discord is a Ruby on Rails web application inspired by Discord. It features user authentication, friend management, and a chat interface. **This is my first Rails practice project** and not a real world application.
+
+
+[Project preview (video)](https://youtu.be/0qoVKAmPL5k)
 
 ## Table of Contents
 
@@ -55,3 +58,31 @@ Start the Rails server with:
     - (or: rails s)
 
 Then, navigate to http://localhost:3000 in your browser.
+
+
+**Features:**
+
+- Creating accounts with email and password, signing in to those accounts, signing out of those accounts.
+- UI designed for desktop layouts
+- Friend system:
+    - Sending friend requests
+    - Accepting or Rejecting friend requests
+    - No duplicate friendships
+- Message system:
+    - Chatting with friends. 
+    - Unique chat between each friend.
+    -  *real time messaging * ( I tried to make it work with turbo streams or ActionCable but didn't find a working setup yet, so as a fallback solution the site uses polling to refresh incoming messages every few seconds.)
+
+
+**Bugs:**
+
+    - Logging in and logging out instantly might cause an error, but if for example a refresh is done after logging in then no errors.
+    - Real time messaging doesnt work so an alternate solution is used.
+
+**Features to be possible made in the future if time:**
+
+    - Group messages/forums
+    - Removing friends
+    - Blocking users
+    - Settings page
+    - Usernames
